@@ -10,6 +10,7 @@ channel.queue_declare(queue='hello')
 # Callback function to process the message
 def callback(ch, method, properties, body):
     print(f" [x] Received {body}")
+    
 
 # Subscribe to the queue
 channel.basic_consume(queue='hello', on_message_callback=callback, auto_ack=True)
